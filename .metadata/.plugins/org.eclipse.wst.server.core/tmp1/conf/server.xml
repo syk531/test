@@ -58,13 +58,17 @@
          Java HTTP Connector: /docs/config/http.html (blocking & non-blocking)
          Java AJP  Connector: /docs/config/ajp.html
          APR (HTTP/AJP) Connector: /docs/apr.html
-         Define a non-SSL/TLS HTTP/1.1 Connector on port 8090
+         Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
-    <Connector URIEncoding="UTF-8" connectionTimeout="20000" port="8030" protocol="HTTP/1.1" redirectPort="8443"/>
+    <!-- 기존 내용 -->
+    <!-- <Connector connectionTimeout="20000" port="9090" protocol="HTTP/1.1" redirectPort="8443"/> -->
+    <!-- 기존 내용을 복사하여 추가한 부분 -->
+    <Connector connectionTimeout="20000" port="9090" protocol="HTTP/1.1" proxyPort="80" redirectPort="8443"/>
+    
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
-               port="8090" protocol="HTTP/1.1"
+               port="8080" protocol="HTTP/1.1"
                connectionTimeout="20000"
                redirectPort="8443" />
     -->
@@ -124,7 +128,12 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="D:\git\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\git\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\hello" path="/hello" reloadable="true" source="org.eclipse.jst.jee.server:hello"/></Host>
+      	<Context docBase="C:\Users\Song\Downloads\java\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\Song\Downloads\java\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\hello" path="/hello" reloadable="true" source="org.eclipse.jst.jee.server:hello">
+      	  <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="100" maxIdle="30" maxwait="10000" name="jdbc/test" password="syk" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/test?autoReconnect=true" username="syk"/>
+  	 		  /&gt;	  	
+      	</Context>
+      
+      </Host>
     </Engine>
   </Service>
 </Server>

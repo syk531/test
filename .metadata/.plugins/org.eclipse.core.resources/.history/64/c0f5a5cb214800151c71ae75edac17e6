@@ -1,0 +1,18 @@
+import java.io.Serializable;
+
+
+
+public class UserInfoVO implements Serializable {
+	private String emp_no;
+	private String id;
+	private String pwd;
+	private String name;
+	private String rnumber;
+	private String dept;
+	private String position;
+	private String registedate;
+	
+	private String command;
+	
+	public User
+}

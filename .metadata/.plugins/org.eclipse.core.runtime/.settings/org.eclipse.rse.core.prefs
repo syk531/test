@@ -1,6 +1,6 @@
 TerminalPrefInvertColors=true
-activeuserprofiles=Song-PC;Team
+activeuserprofiles=Song-PC;Team;VAIO
 eclipse.preferences.version=1
 org.eclipse.rse.systemtype.local.systemType.defaultUserId=Song
 overriddenByCSS=,TerminalPrefInvertColors,
-useridperkey=Song-PC.Local\=Song;
+useridperkey=VAIO.Local\=Song;

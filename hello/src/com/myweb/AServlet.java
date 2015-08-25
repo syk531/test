@@ -10,12 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class AServlet
+ * Servlet implementation class Aservlet
  */
-@WebServlet("/AServlet")
-public class AServlet extends HttpServlet {
+@WebServlet("/Aservlet")
+public class Aservlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private String jspdir = "/";
+	private String jspdir ="/";
 
 	/**
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
@@ -24,7 +24,6 @@ public class AServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String displayname = null;
 		String chk = "";
-		
 		try {
 			ACmd cmd = new ACmd("A.jsp");
 			displayname = cmd.connect(req);

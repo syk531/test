@@ -1,0 +1,42 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+
+public class UserInfoDAO {
+	public int insertUserInfo(UserInfoVO mvo) throws Exception {
+		String dml = "insert into test.EMPINFO (" +
+				"emp_no, id, pwd, name, rnumber, dept, position, registedate" +
+				") valuse (?,?,?,?,?,?,?,?)";
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		int intVal = 0;
+		
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(dml);
+			pstmt.setString(1, mvo.getEmp_no());
+			pstmt.setString(2, mvo.getId());
+			pstmt.setString(3, mvo.getPwd());
+			pstmt.setString(4, mvo.getName());
+			pstmt.setString(5, mvo.getRnumber());
+			pstmt.setString(6, mvo.getDept());
+			pstmt.setString(7, mvo.getPosition());
+			pstmt.setString(8, mvo.getRegistdate());
+			
+			intVal = pstmt.executeUpdate();
+			if(intVal < 1) {
+				System.out.println("데이터 입력 실패");
+			} else {
+				System.out.println("데이터 입력 성공");
+			}
+		} catch(SQLException e) {
+			String msg = "sql exception발생";
+			throw new SQLException(msg + "\n" + e);
+		} finally {
+			try {
+				DBUtil.closeConnection(con, pstmt);
+			} catch(Exception e) {}
+		}
+	}
+}

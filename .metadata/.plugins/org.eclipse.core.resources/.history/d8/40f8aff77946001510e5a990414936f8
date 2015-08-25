@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script language="javascript">
+function detail() {
+	document.f1.submit();
+}
+</script>
+</body>
+</html>

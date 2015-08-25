@@ -1,0 +1,13 @@
+# Observe log4j parsing this file
+log4j.configuration=log4j.properties #c:\log4j\env\log4j.properties
+log4j.debug=false
+log4j.disableOverride=false
+log4j.disable=DEBUG
+
+log4j.rootLogger=DEBUG, stdout
+log4j.logger.Empinfo1=DEBUG, base
+log4j.logger.Empinfo2=INFO, html
+
+## rootLogger
+
+ 

@@ -1,0 +1,5 @@
+
+public class UserControl {
+	private UserInfoVO returnVO = new UserInfoVO();
+	
+}

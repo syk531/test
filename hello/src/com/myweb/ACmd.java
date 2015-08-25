@@ -1,11 +1,12 @@
 package com.myweb;
 
+import java.sql.DriverManager;
+
 import javax.servlet.http.HttpServletRequest;
 
 public class ACmd {
 	private String displayname;
-	
-	public ACmd(String displayname) {
+	public ACmd (String displayname) {
 		this.displayname = displayname;
 	}
 	
@@ -17,7 +18,7 @@ public class ACmd {
 			id = req.getParameter("id");
 			retval = "Welcome " + id;
 			req.setAttribute("id", retval);
-		} catch (Exception e) {
+		} catch(Exception e) {
 			throw new Exception(e.getMessage());
 		}
 		return displayname;
